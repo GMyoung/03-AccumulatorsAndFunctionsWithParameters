@@ -5,18 +5,33 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Yicheng yang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+
+window = rg.RoseWindow
 
 
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
+    two_circles()
+    circle_and_rectangle()
 
 def two_circles():
+    window = rg.RoseWindow()
+    center1 = rg.Point(200, 200)
+    center2 = rg.Point(30, 50)
+    radius1 = 10
+    radius2 = 40
+    asd1 = rg.Circle(center1, radius1)
+    asd2 = rg.Circle(center2, radius2)
+    asd1    .attach_to(window)
+    asd2.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -36,6 +51,20 @@ def two_circles():
 
 
 def circle_and_rectangle():
+    window = rg.RoseWindow()
+    center1 = rg.Point(200, 200)
+    radius1 = 10
+    point1 = rg.Point(100, 150)
+    point2 = rg.Point(200, 50)
+    rectangle = rg.Rectangle(point1,point2)
+    rectangle.attach_to(window)
+    asd1 = rg.Circle(center1, radius1)
+    asd1.attach_to(window)
+    asd1.fill_color = 'blue'
+    window.render()
+    window.close_on_mouse_click()
+    print(outline_)
+    print()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
